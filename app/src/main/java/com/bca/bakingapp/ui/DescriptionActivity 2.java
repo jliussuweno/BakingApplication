@@ -46,7 +46,6 @@ public class DescriptionActivity extends AppCompatActivity implements StepCallba
     private SimpleExoPlayer simpleExoplayer;
     PlayerView playerView;
     boolean doubleBackToExitPressedOnce = false;
-    private Toast toast = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,9 +134,7 @@ public class DescriptionActivity extends AppCompatActivity implements StepCallba
             playerView.setVisibility(View.VISIBLE);
             playerView.setPlayer(simpleExoplayer);
             playerView.setVisibility(View.GONE);
-            if (toast != null) toast.cancel();
-            toast = Toast.makeText(this, "Step " + step.getDescription() + " ini tidak memiliki Video", Toast.LENGTH_SHORT);
-            toast.show();
+            Toast.makeText(this, "Step " + step.getDescription() + " ini tidak memiliki Video", Toast.LENGTH_SHORT).show();
         } else {
             playerView.setVisibility(View.VISIBLE);
             playerView.setPlayer(simpleExoplayer);
@@ -205,9 +202,7 @@ public class DescriptionActivity extends AppCompatActivity implements StepCallba
             playerView.setVisibility(View.GONE);
         } else {
             this.doubleBackToExitPressedOnce = true;
-            if (toast != null) toast.cancel();
-            toast = Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT);
-            toast.show();
+            Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT).show();
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {

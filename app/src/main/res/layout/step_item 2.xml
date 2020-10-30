@@ -34,7 +34,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/textViewStepName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textViewStepName"
-        app:srcCompat="@drawable/exo_icon_play" />
+        app:srcCompat="@android:drawable/ic_menu_info_details" />
 
     <TextView
         android:id="@+id/textView2"
